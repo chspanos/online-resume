@@ -180,9 +180,6 @@ bio.display = function() {
   }
 }
 
-// Call method to display bio information
-bio.display();
-
 // Work display method definition
 work.display = function() {
   // iterate through the jobs array
@@ -218,9 +215,6 @@ work.display = function() {
   });
 }
 
-// Call method to display work objects
-work.display();
-
 // Project display method definition
 projects.display = function() {
   // iterate through the projects array
@@ -255,9 +249,6 @@ projects.display = function() {
     }
   });
 }
-
-// call the method to display projects
-projects.display();
 
 // Function to display schools
 function displaySchools() {
@@ -334,17 +325,25 @@ education.display = function() {
   displayOnlineCourses();
 }
 
-// call the method to display education
-education.display();
+// Main function to display the resume
+function displayResume() {
+  // display bio
+  bio.display();
 
-// call function to display contacts in footer
-displayContacts("#footerContacts");
+  // display work
+  work.display();
 
-// Collecting click locations
-$(document).click(function(loc) {
-  // your code goes here
-  var x = loc.pageX;
-  var y = loc.pageY;
+  // display projects
+  projects.display();
 
-  logClicks(x, y);
-});
+  // display education
+  education.display();
+
+  // Add the map section
+  $("#mapDiv").append(googleMap);
+
+  // call function to display contacts in footer
+  displayContacts("#footerContacts");
+}
+
+displayResume();
