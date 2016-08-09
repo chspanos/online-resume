@@ -26,7 +26,7 @@ h6 {
 
 h1 {
   font-size: 40px;
-  color: #f5a623;
+  color: #f482fb;
   line-height: 48px;
   display: inline;
 }
@@ -61,7 +61,6 @@ h5 {
 
 }
 
-
 .date-text {
   font-style: italic;
   font-size: 14px;
@@ -86,30 +85,41 @@ p {
 }
 
 a {
-  color: #1199c3;
+  color: #9911c3;
   text-decoration: none;
   margin-top: 10px;
   display: block;
 }
 
+.url {
+  color: #1199c3;
+  font-size: smaller;
+}
+
 .welcome-message {
   font-style: italic;
   font-size: 18px;
-  color: #f3f3f3;
+  color: #a52199
+  ;
   line-height: 28px;
 }
 
 #skills-h3 {
-  color: #f5ae23;
+  color: #efff6f;
   display: none;
 }
 
+.skill {
+  list-style: disc;
+  list-style-position: inside;
+}
+
 .orange {
-  background-color: #f5ae23;
+  background-color: #a52199;
 }
 
 .orange-text {
-  color: #f5ae23;
+  color: #efff6f;
 }
 
 .white-text {
@@ -173,6 +183,11 @@ span {
 
 #lets-connect {
   text-align: center;
+}
+
+/* zocial */
+[class*="zocial-"]:before {
+  font-family: "zocial", sans-serif;
 }
 
 /* Media queries to handle various device widths */
