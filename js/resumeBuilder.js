@@ -151,90 +151,84 @@ function displayContacts() {
       var zocialClass;
 
       switch (contactKey) {
-        case "mobile":
-          zocialClass = "zocial-call";
+        case 'mobile':
+          zocialClass = 'zocial-call';
           break;
-        case "email":
-          zocialClass = "zocial-email";
+        case 'email':
+          zocialClass = 'zocial-email';
           break;
-        case "twitter":
-          zocialClass = "zocial-twitter";
+        case 'twitter':
+          zocialClass = 'zocial-twitter';
           break;
-        case "github":
-          zocialClass = "zocial-github";
+        case 'github':
+          zocialClass = 'zocial-github';
           break;
-        case "location":
-          zocialClass = "zocial-guest";
+        case 'location':
+          zocialClass = 'zocial-guest';
           break;
         default:
-          zocialClass = "";
-      };
+          zocialClass = '';
+      }
 
       // format and display each contact
-      var formattedContact = HTMLmyGeneric.replace("%zocial%", zocialClass).replace("%data%", bio.contacts[contactKey]);
-      $("#topContacts").append(formattedContact);
+      var formattedContact = HTMLmyGeneric.replace('%zocial%', zocialClass).replace('%data%', bio.contacts[contactKey]);
+      $('#topContacts').append(formattedContact);
     }
-  };
-}
-
-// function to add new class to skill items
-function addSkillClass() {
-  var skillsList;
-
-  skillsList = $("#skills").find("li");
-  skillsList.addClass("skill");
+  }
 }
 
 // Bio display method definition
 bio.display = function() {
   // format and display name and role
-  var formattedName = HTMLheaderName.replace("%data%", bio.name);
-  var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+  var formattedName = HTMLheaderName.replace('%data%', bio.name);
+  var formattedRole = HTMLheaderRole.replace('%data%', bio.role);
 
-  $("#header").prepend(formattedRole);
-  $("#header").prepend(formattedName);
+  $('#header').prepend(formattedRole);
+  $('#header').prepend(formattedName);
 
   // format and display contacts
   displayContacts();
 
   // format and display biopic
-  var formattedPic = HTMLbioPic.replace("%data%", bio.biopic);
-  $("#header").append(formattedPic);
+  var formattedPic = HTMLbioPic.replace('%data%', bio.biopic);
+  $('#header').append(formattedPic);
+  // add alt description attribute to image
+  $('img:last').attr('alt', 'Biopic');
 
   // format and display welcomeMessage
-  var formattedMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-  $("#header").append(formattedMsg);
+  var formattedMsg = HTMLwelcomeMsg.replace('%data%', bio.welcomeMessage);
+  $('#header').append(formattedMsg);
 
   // Format and display skills
   if (bio.skills.length > 0) {
 
-    $("#header").append(HTMLskillsStart);
+    $('#header').append(HTMLskillsStart);
 
     bio.skills.forEach(function(skill){
       // format and display each skill
-      var formattedSkill = HTMLskills.replace("%data%", skill);
-      $("#skills").append(formattedSkill);
+      var formattedSkill = HTMLskills.replace('%data%', skill);
+      $('#skills').append(formattedSkill);
+
+      // Add skill class to list element for styling
+      $('li:last').addClass('skill');
     });
   }
-
-  // Add skill class to skill list items for styling
-  addSkillClass();
-}
+};
 
 // function to display new job subsection - an accomplishments list
 function displayResults(resultsList) {
-  // define formats
+  // define accomplishment list templates
   var HTMLresultsStart = '<ul class="results"></ul>';
   var HTMLresults = '<li class="result"><p>%data%</p></li>';
 
   // start a new results list
-  $(".work-entry:last").append(HTMLresultsStart);
+  $('.work-entry:last').append(HTMLresultsStart);
 
   // iterate through results array
   resultsList.forEach(function(thisResult){
     // format and display result
-    var formattedResult = HTMLresults.replace("%data%", thisResult);
-    $(".results:last").append(formattedResult);
+    var formattedResult = HTMLresults.replace('%data%', thisResult);
+    $('.results:last').append(formattedResult);
   });
 }
 
@@ -244,39 +238,39 @@ work.display = function() {
   work.jobs.forEach(function(thisJob){
 
     // start a new job entry
-    $("#workExperience").append(HTMLworkStart);
+    $('#workExperience').append(HTMLworkStart);
 
     // format and display employer and title
-    var formattedEmployer = HTMLworkEmployer.replace("%data%", thisJob.employer);
-    var formattedTitle = HTMLworkTitle.replace("%data%", thisJob.title);
+    var formattedEmployer = HTMLworkEmployer.replace('%data%', thisJob.employer);
+    var formattedTitle = HTMLworkTitle.replace('%data%', thisJob.title);
     var formattedEmployerTitle = formattedEmployer + formattedTitle;
 
-    $(".work-entry:last").append(formattedEmployerTitle);
+    $('.work-entry:last').append(formattedEmployerTitle);
 
     // format and display dates
-    if (thisJob.hasOwnProperty("dates")) {
-      var formattedEmpDates = HTMLworkDates.replace("%data%", thisJob.dates);
-      $(".work-entry:last").append(formattedEmpDates);
-    };
+    if (thisJob.hasOwnProperty('dates')) {
+      var formattedEmpDates = HTMLworkDates.replace('%data%', thisJob.dates);
+      $('.work-entry:last').append(formattedEmpDates);
+    }
 
     // format and display location
-    if (thisJob.hasOwnProperty("location")) {
-      var formattedEmpLocation = HTMLworkLocation.replace("%data%", thisJob.location);
-      $(".work-entry:last").append(formattedEmpLocation);
-    };
+    if (thisJob.hasOwnProperty('location')) {
+      var formattedEmpLocation = HTMLworkLocation.replace('%data%', thisJob.location);
+      $('.work-entry:last').append(formattedEmpLocation);
+    }
 
     // format and display job description
-    if (thisJob.hasOwnProperty("description")) {
-      var formattedEmpDesc = HTMLworkDescription.replace("%data%", thisJob.description);
-      $(".work-entry:last").append(formattedEmpDesc);
+    if (thisJob.hasOwnProperty('description')) {
+      var formattedEmpDesc = HTMLworkDescription.replace('%data%', thisJob.description);
+      $('.work-entry:last').append(formattedEmpDesc);
     }
 
     // format and display results (if any)
-    if (thisJob.hasOwnProperty("results")) {
+    if (thisJob.hasOwnProperty('results')) {
       displayResults(thisJob.results);
     }
   });
-}
+};
 
 // Project display method definition
 projects.display = function() {
@@ -284,38 +278,45 @@ projects.display = function() {
   projects.projects.forEach(function(thisProject){
 
     // start a new project entry
-    $("#projects").append(HTMLprojectStart);
+    $('#projects').append(HTMLprojectStart);
 
     // format and display title
-    var formattedProjTitle = HTMLprojectTitle.replace("%data%", thisProject.title);
-    if (thisProject.hasOwnProperty("url")) {
+    var formattedProjTitle = HTMLprojectTitle.replace('%data%', thisProject.title);
+    if (thisProject.hasOwnProperty('url')) {
       // insert link
-      formattedProjTitle = formattedProjTitle.replace("#", thisProject.url);
-    };
-    $(".project-entry:last").append(formattedProjTitle);
+      formattedProjTitle = formattedProjTitle.replace('#', thisProject.url);
+    }
+    $('.project-entry:last').append(formattedProjTitle);
 
     // format and display dates
-    if (thisProject.hasOwnProperty("dates")) {
-      var formattedProjDates = HTMLprojectDates.replace("%data%", thisProject.dates);
-      $(".project-entry:last").append(formattedProjDates);
-    };
+    if (thisProject.hasOwnProperty('dates')) {
+      var formattedProjDates = HTMLprojectDates.replace('%data%', thisProject.dates);
+      $('.project-entry:last').append(formattedProjDates);
+    }
 
     // format and display description
-    if (thisProject.hasOwnProperty("description")) {
-      var formattedProjDesc = HTMLprojectDescription.replace("%data%", thisProject.description);
-      $(".project-entry:last").append(formattedProjDesc);
-    };
+    if (thisProject.hasOwnProperty('description')) {
+      var formattedProjDesc = HTMLprojectDescription.replace('%data%', thisProject.description);
+      $('.project-entry:last').append(formattedProjDesc);
+    }
 
     // format and display images
-    if (thisProject.hasOwnProperty("images")) {
-      // display each image
+    if (thisProject.hasOwnProperty('images')) {
+      // create image description for alt attribute
+      var imageDesc = thisProject.title + ' image';
+
+      // iterate through images
       thisProject.images.forEach(function(image){
-        var formattedProjImg = HTMLprojectImage.replace("%data%", image);
-        $(".project-entry:last").append(formattedProjImg);
+        // display image
+        var formattedProjImg = HTMLprojectImage.replace('%data%', image);
+        $('.project-entry:last').append(formattedProjImg);
+
+        // add alt attribute to image
+        $('img:last').attr('alt', imageDesc);
       });
     }
   });
-}
+};
 
 // Function to display schools
 function displaySchools() {
@@ -323,32 +324,32 @@ function displaySchools() {
   education.schools.forEach(function(thisSchool){
 
     // start a new school entry
-    $("#education").append(HTMLschoolStart);
+    $('#education').append(HTMLschoolStart);
 
     // format and display school name, link, and degree
-    var formattedName = HTMLschoolName.replace("#", thisSchool.url).replace("%data%", thisSchool.name);
-    var formattedDegree = HTMLschoolDegree.replace("%data%", thisSchool.degree);
+    var formattedName = HTMLschoolName.replace('#', thisSchool.url).replace('%data%', thisSchool.name);
+    var formattedDegree = HTMLschoolDegree.replace('%data%', thisSchool.degree);
     var formattedNameDegree = formattedName + formattedDegree;
-    $(".education-entry:last").append(formattedNameDegree);
+    $('.education-entry:last').append(formattedNameDegree);
 
     // format and display dates
-    if (thisSchool.hasOwnProperty("dates")) {
-      var formattedDates = HTMLschoolDates.replace("%data%", thisSchool.dates)
-      $(".education-entry:last").append(formattedDates);
+    if (thisSchool.hasOwnProperty('dates')) {
+      var formattedDates = HTMLschoolDates.replace('%data%', thisSchool.dates);
+      $('.education-entry:last').append(formattedDates);
     }
 
     // format and display location
-    if (thisSchool.hasOwnProperty("location")) {
-      var formattedLoc = HTMLschoolLocation.replace("%data%", thisSchool.location)
-      $(".education-entry:last").append(formattedLoc);
+    if (thisSchool.hasOwnProperty('location')) {
+      var formattedLoc = HTMLschoolLocation.replace('%data%', thisSchool.location);
+      $('.education-entry:last').append(formattedLoc);
     }
 
     // format and display majors
-    if (thisSchool.hasOwnProperty("majors")) {
+    if (thisSchool.hasOwnProperty('majors')) {
       // display each major
       thisSchool.majors.forEach(function(major){
-        var formattedMajor = HTMLschoolMajor.replace("%data%", major);
-        $(".education-entry:last").append(formattedMajor);
+        var formattedMajor = HTMLschoolMajor.replace('%data%', major);
+        $('.education-entry:last').append(formattedMajor);
       });
     }
   });
@@ -357,33 +358,32 @@ function displaySchools() {
 // Function to display on-line courses
 function displayOnlineCourses() {
   if (education.onlineCourses.length > 0) {
-    // define custom format for URL message with distinct class for styling
-    var HTMLmyOnlineURL = '<br><a class="url" href="#">%data%</a>';
-
     // display heading
-    $("#education").append(HTMLonlineClasses);
+    $('#education').append(HTMLonlineClasses);
 
     // iterate through the on-line courses array
     education.onlineCourses.forEach(function(thisCourse){
 
       // start a new school entry
-      $("#education").append(HTMLschoolStart);
+      $('#education').append(HTMLschoolStart);
 
       // format and display course title, link, and school
-      var formattedCourseName = HTMLonlineTitle.replace("#", thisCourse.url).replace("%data%", thisCourse.title);
-      var formattedSchool = HTMLonlineSchool.replace("%data%", thisCourse.school);
+      var formattedCourseName = HTMLonlineTitle.replace('#', thisCourse.url).replace('%data%', thisCourse.title);
+      var formattedSchool = HTMLonlineSchool.replace('%data%', thisCourse.school);
       var formattedName = formattedCourseName + formattedSchool;
-      $(".education-entry:last").append(formattedName);
+      $('.education-entry:last').append(formattedName);
 
       // format and display dates
-      if (thisCourse.hasOwnProperty("dates")) {
-        var formattedDates = HTMLonlineDates.replace("%data%", thisCourse.dates)
-        $(".education-entry:last").append(formattedDates);
+      if (thisCourse.hasOwnProperty('dates')) {
+        var formattedDates = HTMLonlineDates.replace('%data%', thisCourse.dates);
+        $('.education-entry:last').append(formattedDates);
       }
 
       // format and display url link
-      var formattedUrl = HTMLmyOnlineURL.replace("#", thisCourse.url).replace("%data%", thisCourse.url);
-      $(".education-entry:last").append(formattedUrl);
+      var formattedUrl = HTMLonlineURL.replace('#', thisCourse.url).replace('%data%', thisCourse.url);
+      $('.education-entry:last').append(formattedUrl);
+      // add url class to anchor for styling
+      $('a:last').addClass('url');
     });
   }
 }
@@ -392,11 +392,11 @@ function displayOnlineCourses() {
 education.display = function() {
   displaySchools();
   displayOnlineCourses();
-}
+};
 
 // function to display footer contact info using zocial icons
 function displayFooter() {
-  // Generic form for footer
+  // Template for footer contact item
   var HTMLfooterGeneric = '<li class="flex-item"><a class="orange-text %zocial%" href="#"><span class="white-text">%data%</span></a></li>';
 
   // iterate through each contacts object
@@ -406,34 +406,34 @@ function displayFooter() {
       var zocialClass, myRef, myData;
 
       switch (contactKey) {
-        case "twitter":
-          zocialClass = "zocial-twitter";
-          myData = "Twitter";
+        case 'twitter':
+          zocialClass = 'zocial-twitter';
+          myData = 'Twitter';
           break;
-        case "github":
-          zocialClass = "zocial-github";
-          myData = "Github";
+        case 'github':
+          zocialClass = 'zocial-github';
+          myData = 'Github';
           break;
-        case "linkedin":
-          zocialClass = "zocial-linkedin";
-          myData = "LinkedIn";
+        case 'linkedin':
+          zocialClass = 'zocial-linkedin';
+          myData = 'LinkedIn';
           break;
-        case "wordpress":
-          zocialClass = "zocial-wordpress";
-          myData = "Wordpress";
+        case 'wordpress':
+          zocialClass = 'zocial-wordpress';
+          myData = 'Wordpress';
           break;
         default:
-          zocialClass = "";
+          zocialClass = '';
           myData = contactKey;
-      };
+      }
 
       myRef = bio.footercontacts[contactKey];
 
       // format and display contact
-      var formattedContact = HTMLfooterGeneric.replace("%zocial%", zocialClass).replace("#", myRef).replace("%data%", myData);
-      $("#footerContacts").append(formattedContact);
+      var formattedContact = HTMLfooterGeneric.replace('%zocial%', zocialClass).replace('#', myRef).replace('%data%', myData);
+      $('#footerContacts').append(formattedContact);
     }
-  };
+  }
 }
 
 // Main function to display the resume
@@ -451,10 +451,9 @@ function displayResume() {
   education.display();
 
   // Add the map section
-  $("#mapDiv").append(googleMap);
+  $('#mapDiv').append(googleMap);
 
   // call function to display contacts in footer
-  //displayContacts("#footerContacts");
   displayFooter();
 }
 
