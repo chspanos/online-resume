@@ -171,10 +171,15 @@ ul {
   padding: 10px;
   width: 200px;
   display: none;
+  border: none;
+  margin: 0px 10px 0px 0px;
+  box-shadow: none;
 }
 
 img {
-  padding: 10px;
+  border: 1px solid #999;
+  margin: 10px;
+  box-shadow: 3px 3px 3px #999;
 }
 
 span {

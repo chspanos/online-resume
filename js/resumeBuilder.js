@@ -77,14 +77,16 @@ var projects = {
       "dates": "2016",
       "description": "A responsive website that will be used to showcase my Udacity Front-End Web \
       Developer projects",
-      "images": ["images/portfolio-img1.jpg", "images/portfolio-img2.jpg"]
+      "images": ["images/portfolio-img1.jpg", "images/portfolio-img2.jpg"],
+      "url": "https://github.com/chspanos/portfolio"
     },
     {
       "title": "Online Resume",
       "dates": "2016",
       "description": "An online resume that uses JSON objects to store resume \
       data and employs javaScript and jQuery to populate the HTML with this data",
-      "images": ["images/resume-img1.jpg"]
+      "images": ["images/resume-img1.jpg"],
+      "url": "https://github.com/chspanos/frontend-nanodegree-resume"
     }
   ]
 };
@@ -266,6 +268,10 @@ projects.display = function() {
 
     // format and display title
     var formattedProjTitle = HTMLprojectTitle.replace("%data%", thisProject.title);
+    if (thisProject.hasOwnProperty("url")) {
+      // insert link
+      formattedProjTitle = formattedProjTitle.replace("#", thisProject.url);
+    };
     $(".project-entry:last").append(formattedProjTitle);
 
     // format and display dates
