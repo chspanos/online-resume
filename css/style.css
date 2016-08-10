@@ -186,6 +186,11 @@ span {
   padding: 5px;
 }
 
+.result {
+  list-style: circle inside;
+  padding-left: 10px;
+}
+
 #lets-connect {
   text-align: center;
 }

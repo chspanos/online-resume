@@ -32,40 +32,40 @@ var work = {
       "title": "Student",
       "location": "San Franscisco Bay Area, CA",
       "dates": "2015-present",
-      "description": "Completed coursework in C++ programming and Python, \
-      earning an A in each class. Currently enrolled in Udacity's Front-End \
-      Web Developer nanodegree."
+      "description": "Completed coursework in C++ programming and Python, earning an A in each class. Currently enrolled in Udacity's Front-End Web Developer nanodegree."
     },
     {
       "employer": "Self-employed",
       "title": "Writer",
       "location": "San Franscisco Bay Area, CA",
       "dates": "2003-2014",
-      "description": "Penned three novels and over a dozen short stories in \
-      various genres, including memoir, literary, young adult (YA), and \
-      children's fiction. Published short fiction in <em>Hunger Mountain</em>, \
-      <em>CWC Literary Review</em>, <em>Stories for Children Magazine</em>, \
-      and <em>Beyond Centuri</em>."
+      "description": "Penned three novels and over a dozen short stories in various genres, including memoir, literary, young adult (YA), and children's fiction.",
+      "results": [
+        "Published short fiction in <em>Hunger Mountain</em>, <em>CWC Literary Review</em>, <em>Stories for Children Magazine</em>, and <em>Beyond Centuri</em>.",
+        "Won honorable mention in the very competitive annual <em>Writer's Digest</em> writing contest in the mainstream/literary category.",
+        "Garnered honorable mention and semi-finalist standings in several other writing contests."
+      ]
     },
     {
       "employer": "Grace Cooperative Preschool",
       "title": "Treasurer (volunteer position)",
       "location": "Walnut Creek, CA",
       "dates": "2000-2002",
-      "description": "Managed the finances, including tuition, monthly billing, \
-      and the annual budget for a preschool of about 25 families."
+      "description": "Managed the finances, including tuition, monthly billing, and the annual budget for a preschool of about 25 families."
     },
     {
       "employer": "Hewlett-Packard Company",
       "title": "Software Development Engineer",
       "location": "Santa Clara, CA",
       "dates": "1990-1996",
-      "description": "Investigated the use of formal verification tools for \
-      hardware design. Successfully employed symbolic model checking \
-      techniques to detect deadlocks on a bus converter chip. Designed and \
-      implemented software for integrating new tools within HP's design \
-      methodology."
-    },
+      "description": "Investigated the use of formal verification tools for hardware design. Designed and implemented software for integrating new tools within HP's design methodology.",
+      "results": [
+        "Successfully employed symbolic model checking techniques to detect deadlocks on a bus converter chip.",
+        "Won best paper award for work on symbolic model checking, and was published in the journal <em>Formal Methods in Systems Design</em>.",
+        "Employed BDDs (binary decision diagrams) to efficiently and automatically generate Verilog library models.",
+        "Won best poster award for work on the use of BDDs in library model generation."
+      ]
+    }
   ]
 };
 
@@ -75,16 +75,14 @@ var projects = {
     {
       "title": "Portfolio",
       "dates": "2016",
-      "description": "A responsive website that will be used to showcase my Udacity Front-End Web \
-      Developer projects",
+      "description": "A responsive website that will be used to showcase my Udacity Front-End Web Developer projects",
       "images": ["images/portfolio-img1.jpg", "images/portfolio-img2.jpg"],
       "url": "https://github.com/chspanos/portfolio"
     },
     {
       "title": "Online Resume",
       "dates": "2016",
-      "description": "An online resume that uses JSON objects to store resume \
-      data and employs javaScript and jQuery to populate the HTML with this data",
+      "description": "An online resume that uses JSON objects to store resume data and employs javaScript and jQuery to populate the HTML with this data",
       "images": ["images/resume-img1.jpg"],
       "url": "https://github.com/chspanos/frontend-nanodegree-resume"
     }
@@ -223,6 +221,23 @@ bio.display = function() {
   addSkillClass();
 }
 
+// function to display new job subsection - an accomplishments list
+function displayResults(resultsList) {
+  // define formats
+  var HTMLresultsStart = '<ul class="results"></ul>';
+  var HTMLresults = '<li class="result"><p>%data%</p></li>';
+
+  // start a new results list
+  $(".work-entry:last").append(HTMLresultsStart);
+
+  // iterate through results array
+  resultsList.forEach(function(thisResult){
+    // format and display result
+    var formattedResult = HTMLresults.replace("%data%", thisResult);
+    $(".results:last").append(formattedResult);
+  });
+}
+
 // Work display method definition
 work.display = function() {
   // iterate through the jobs array
@@ -254,6 +269,11 @@ work.display = function() {
     if (thisJob.hasOwnProperty("description")) {
       var formattedEmpDesc = HTMLworkDescription.replace("%data%", thisJob.description);
       $(".work-entry:last").append(formattedEmpDesc);
+    }
+
+    // format and display results (if any)
+    if (thisJob.hasOwnProperty("results")) {
+      displayResults(thisJob.results);
     }
   });
 }
