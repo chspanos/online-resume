@@ -124,6 +124,11 @@ a {
   color: #fff;
 }
 
+.lilac-text {
+  font-weight: bold;
+  color: #f482fb;
+}
+
 .gray {
   background-color: #f3f3f3;
   padding-bottom: 10px;

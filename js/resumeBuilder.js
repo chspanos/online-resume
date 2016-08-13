@@ -5,9 +5,11 @@ var bio = {
   "welcomeMessage": "Welcome to my online resume.",
   "biopic": "images/Cheryl.jpg",
   "contacts": {
-    "mobile": "510-555-5555",
-    "email": "chspanos3(at)gmail(dot)com",
+    //"mobile": "510-555-5555",
+    //"email": "chspanos3(at)gmail(dot)com",
+    "linkedin": "cheryl-spanos",
     "github": "chspanos",
+    "wordpress": "Writers on the Journey Blog",
     "location": "San Francisco Bay Area"
   },
   "footercontacts": {
@@ -26,8 +28,7 @@ var bio = {
 
 // Work JSON ojbect
 var work = {
-  "jobs": [
-    {
+  "jobs": [{
       "employer": "UC Berkeley Extension & others",
       "title": "Student",
       "location": "San Franscisco Bay Area, CA",
@@ -61,7 +62,7 @@ var work = {
       "description": "Investigated the use of formal verification tools for hardware design. Designed and implemented software for integrating new tools within HP's design methodology.",
       "results": [
         "Successfully employed symbolic model checking techniques to detect deadlocks on a bus converter chip.",
-        "Won best paper award for work on symbolic model checking, and was published in the journal <em>Formal Methods in Systems Design</em>.",
+        "Won best paper award for work on symbolic model checking and was published in the journal <em>Formal Methods in Systems Design</em>.",
         "Employed BDDs (binary decision diagrams) to efficiently and automatically generate Verilog library models.",
         "Won best poster award for work on the use of BDDs in library model generation."
       ]
@@ -71,32 +72,30 @@ var work = {
 
 // Projects JSON object
 var projects = {
-  "projects": [
-    {
+  "projects": [{
       "title": "Portfolio",
       "dates": "2016",
       "description": "A responsive website that will be used to showcase my Udacity Front-End Web Developer projects",
       "images": ["images/portfolio-img1.jpg", "images/portfolio-img2.jpg"],
-      "url": "https://github.com/chspanos/portfolio"
+      "url": "https://chspanos.github.io/portfolio"
     },
     {
       "title": "Online Resume",
       "dates": "2016",
       "description": "An online resume that uses JSON objects to store resume data and employs javaScript and jQuery to populate the HTML with this data",
       "images": ["images/resume-img1.jpg"],
-      "url": "https://github.com/chspanos/frontend-nanodegree-resume"
+      "url": "https://chspanos.github.io/frontend-nanodegree-resume"
     }
   ]
 };
 
 // Education JSON object
 var education = {
-  "schools": [
-    {
+  "schools": [{
       "name": "Brown University",
       "location": "Providence, RI",
       "degree": "PhD",
-      "dates": "1990",
+      "dates": "Thesis: An Approach to Uncertainty in VLSI Design",
       "url": "https://www.brown.edu/",
       "majors": ["Computer Science"]
     },
@@ -104,7 +103,7 @@ var education = {
       "name": "Brown University",
       "location": "Providence, RI",
       "degree": "MS",
-      "dates": "1986",
+      "dates": "Sigma Xi",
       "url": "https://www.brown.edu/",
       "majors": ["Computer Science"]
     },
@@ -112,13 +111,12 @@ var education = {
       "name": "Union College",
       "location": "Schenectady, NY",
       "degree": "BS",
-      "dates": "1984",
+      "dates": "Summa Cum Laude, Phi Beta Kappa",
       "url": "https://www.union.edu/",
       "majors": ["Computer Science"]
     }
   ],
-  "onlineCourses": [
-    {
+  "onlineCourses": [{
       "title": "Front-End Web Developer Nanodegree",
       "school": "Udacity",
       "dates": "in progress",
@@ -165,6 +163,12 @@ function displayContacts() {
           break;
         case 'location':
           zocialClass = 'zocial-guest';
+          break;
+        case 'linkedin':
+          zocialClass = 'zocial-linkedin';
+          break;
+        case 'wordpress':
+          zocialClass = 'zocial-wordpress';
           break;
         default:
           zocialClass = '';
@@ -397,7 +401,7 @@ education.display = function() {
 // function to display footer contact info using zocial icons
 function displayFooter() {
   // Template for footer contact item
-  var HTMLfooterGeneric = '<li class="flex-item"><a class="orange-text %zocial%" href="#"><span class="white-text">%data%</span></a></li>';
+  var HTMLfooterGeneric = '<li class="flex-item"><a class="orange-text %zocial%" href="#"><span class="lilac-text">%data%</span></a></li>';
 
   // iterate through each contacts object
   for (var contactKey in bio.footercontacts) {
@@ -408,19 +412,19 @@ function displayFooter() {
       switch (contactKey) {
         case 'twitter':
           zocialClass = 'zocial-twitter';
-          myData = 'Twitter';
+          myData = 'myTwitter';
           break;
         case 'github':
           zocialClass = 'zocial-github';
-          myData = 'Github';
+          myData = 'myGithub';
           break;
         case 'linkedin':
           zocialClass = 'zocial-linkedin';
-          myData = 'LinkedIn';
+          myData = 'myLinkedIn';
           break;
         case 'wordpress':
           zocialClass = 'zocial-wordpress';
-          myData = 'Wordpress';
+          myData = 'myWordpress';
           break;
         default:
           zocialClass = '';
