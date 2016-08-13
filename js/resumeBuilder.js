@@ -7,9 +7,9 @@ var bio = {
   "contacts": {
     //"mobile": "510-555-5555",
     //"email": "chspanos3(at)gmail(dot)com",
-    "linkedin": "cheryl-spanos",
-    "github": "chspanos",
-    "wordpress": "Writers on the Journey Blog",
+    "linkedin": "https://www.linkedin.com/in/cheryl-spanos-4b9471a5",
+    "github": "https://github.com/chspanos",
+    "wordpress": "https://writersotj.wordpress.com/",
     "location": "San Francisco Bay Area"
   },
   "footercontacts": {
@@ -95,6 +95,7 @@ var education = {
       "name": "Brown University",
       "location": "Providence, RI",
       "degree": "PhD",
+      // Replaced date string content with thesis/honors
       "dates": "Thesis: An Approach to Uncertainty in VLSI Design",
       "url": "https://www.brown.edu/",
       "majors": ["Computer Science"]
@@ -103,7 +104,8 @@ var education = {
       "name": "Brown University",
       "location": "Providence, RI",
       "degree": "MS",
-      "dates": "Sigma Xi",
+      // Replaced date string content with thesis/honors
+      "dates": "Honors: Sigma Xi",
       "url": "https://www.brown.edu/",
       "majors": ["Computer Science"]
     },
@@ -111,7 +113,8 @@ var education = {
       "name": "Union College",
       "location": "Schenectady, NY",
       "degree": "BS",
-      "dates": "Summa Cum Laude, Phi Beta Kappa",
+      // Replaced date string content with thesis/honors
+      "dates": "Honors: Summa Cum Laude, Phi Beta Kappa",
       "url": "https://www.union.edu/",
       "majors": ["Computer Science"]
     }
@@ -126,13 +129,13 @@ var education = {
       "title": "Python Programming",
       "school": "UC Berkeley Extension",
       "dates": "2016",
-      "url": "http://extension.berkeley.edu/search/publicCourseSearchDetails.do?method=load&courseId=40968"
+      "url": "https://extension.berkeley.edu/search/publicCourseSearchDetails.do?method=load&courseId=40968"
     },
     {
       "title": "C++ Programming I",
       "school": "UC Berkeley Extension",
       "dates": "2015",
-      "url": "http://extension.berkeley.edu/search/publicCourseSearchDetails.do?method=load&courseId=40931"
+      "url": "https://extension.berkeley.edu/search/publicCourseSearchDetails.do?method=load&courseId=40931"
     }
   ]
 };
@@ -140,42 +143,60 @@ var education = {
 // function to display top contact info
 function displayContacts() {
   // modify the generic contact template to use zocial icons
-  var HTMLmyGeneric = '<li class="flex-item"><span class="orange-text %zocial%"></span><span class="white-text">%data%</span></li>';
+  //var HTMLmyGeneric = '<li class="flex-item"><span class="orange-text %zocial%"></span><span class="white-text">%data%</span></li>';
+  var HTMLmyGeneric = '<li class="flex-item"><a class="white-text %zocial%" href="#"><span class="orange-text">%data%</span></a></li>';
 
   // iterate through each contacts object
   for (var contactKey in bio.contacts) {
     if (bio.contacts.hasOwnProperty(contactKey)) {
-      // set the zocial class
-      var zocialClass;
+      // set the zocial class and variables
+      var zocialClass, data, ref;
 
       switch (contactKey) {
         case 'mobile':
           zocialClass = 'zocial-call';
+          data =  bio.contacts[contactKey];
+          ref = '';
           break;
         case 'email':
           zocialClass = 'zocial-email';
+          data = bio.contacts[contactKey];
+          ref = '';
           break;
         case 'twitter':
           zocialClass = 'zocial-twitter';
+          data = 'Twitter';
+          ref = bio.contacts[contactKey];
           break;
         case 'github':
           zocialClass = 'zocial-github';
+          data = 'GitHub';
+          ref = bio.contacts[contactKey];
           break;
         case 'location':
           zocialClass = 'zocial-guest';
+          data = bio.contacts[contactKey];
+          ref = '';
           break;
         case 'linkedin':
           zocialClass = 'zocial-linkedin';
+          data = 'LinkedIn';
+          ref = bio.contacts[contactKey];
           break;
         case 'wordpress':
           zocialClass = 'zocial-wordpress';
+          data = 'Wordpress';
+          ref = bio.contacts[contactKey];
           break;
         default:
           zocialClass = '';
+          data = bio.contacts[contactKey];
+          ref = '';
       }
 
       // format and display each contact
-      var formattedContact = HTMLmyGeneric.replace('%zocial%', zocialClass).replace('%data%', bio.contacts[contactKey]);
+      //var formattedContact = HTMLmyGeneric.replace('%zocial%', zocialClass).replace('%data%', bio.contacts[contactKey]);
+      var formattedContact = HTMLmyGeneric.replace('%zocial%', zocialClass).replace('#', ref).replace('%data%', data);
       $('#topContacts').append(formattedContact);
     }
   }
@@ -401,7 +422,7 @@ education.display = function() {
 // function to display footer contact info using zocial icons
 function displayFooter() {
   // Template for footer contact item
-  var HTMLfooterGeneric = '<li class="flex-item"><a class="orange-text %zocial%" href="#"><span class="lilac-text">%data%</span></a></li>';
+  var HTMLfooterGeneric = '<li class="flex-item"><a class="white-text %zocial%" href="#"><span class="orange-text">%data%</span></a></li>';
 
   // iterate through each contacts object
   for (var contactKey in bio.footercontacts) {
@@ -412,19 +433,19 @@ function displayFooter() {
       switch (contactKey) {
         case 'twitter':
           zocialClass = 'zocial-twitter';
-          myData = 'myTwitter';
+          myData = 'Twitter';
           break;
         case 'github':
           zocialClass = 'zocial-github';
-          myData = 'myGithub';
+          myData = 'Github';
           break;
         case 'linkedin':
           zocialClass = 'zocial-linkedin';
-          myData = 'myLinkedIn';
+          myData = 'LinkedIn';
           break;
         case 'wordpress':
           zocialClass = 'zocial-wordpress';
-          myData = 'myWordpress';
+          myData = 'Wordpress';
           break;
         default:
           zocialClass = '';
