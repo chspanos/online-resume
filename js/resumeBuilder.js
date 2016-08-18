@@ -5,8 +5,8 @@ var bio = {
   "welcomeMessage": "Welcome to my online resume.",
   "biopic": "images/Cheryl.jpg",
   "contacts": {
-    //"mobile": "510-555-5555",
-    //"email": "chspanos3(at)gmail(dot)com",
+    "mobile": "555-555-5555",
+    "email": "chspanos@myemail.com",
     "linkedin": "https://www.linkedin.com/in/cheryl-spanos-4b9471a5",
     "github": "https://github.com/chspanos",
     "wordpress": "https://writersotj.wordpress.com/",
@@ -31,14 +31,14 @@ var work = {
   "jobs": [{
       "employer": "UC Berkeley Extension & others",
       "title": "Student",
-      "location": "San Franscisco Bay Area, CA",
+      "location": "San Francisco Bay Area, CA",
       "dates": "2015-present",
       "description": "Completed coursework in C++ programming and Python, earning an A in each class. Currently enrolled in Udacity's Front-End Web Developer nanodegree."
     },
     {
       "employer": "Self-employed",
       "title": "Writer",
-      "location": "San Franscisco Bay Area, CA",
+      "location": "San Francisco Bay Area, CA",
       "dates": "2003-2014",
       "description": "Penned three novels and over a dozen short stories in various genres, including memoir, literary, young adult (YA), and children's fiction.",
       "results": [
@@ -142,61 +142,60 @@ var education = {
 
 // function to display top contact info
 function displayContacts() {
-  // modify the generic contact template to use zocial icons
+  // modify the generic contact template to use icon fonts
   //var HTMLmyGeneric = '<li class="flex-item"><span class="orange-text %zocial%"></span><span class="white-text">%data%</span></li>';
-  var HTMLmyGeneric = '<li class="flex-item"><a class="white-text %zocial%" href="#"><span class="orange-text">%data%</span></a></li>';
+  var HTMLmyGeneric = '<li class="flex-item"><a class="white-text %iconfont%" href="#"><span class="orange-text">%data%</span></a></li>';
 
   // iterate through each contacts object
   for (var contactKey in bio.contacts) {
     if (bio.contacts.hasOwnProperty(contactKey)) {
-      // set the zocial class and variables
-      var zocialClass, data, ref;
+      // set the iconfont class and variables
+      var iconClass, data, ref;
 
       switch (contactKey) {
         case 'mobile':
-          zocialClass = 'zocial-call';
+          iconClass = 'fontawesome-phone';
           data =  bio.contacts[contactKey];
-          ref = '';
+          ref = ' ';
           break;
         case 'email':
-          zocialClass = 'zocial-email';
+          iconClass = 'fontawesome-envelope';
           data = bio.contacts[contactKey];
-          ref = '';
+          ref = ' ';
           break;
         case 'twitter':
-          zocialClass = 'zocial-twitter';
+          iconClass = 'fontawesome-twitter';
           data = 'Twitter';
           ref = bio.contacts[contactKey];
           break;
         case 'github':
-          zocialClass = 'zocial-github';
+          iconClass = 'fontawesome-github';
           data = 'GitHub';
           ref = bio.contacts[contactKey];
           break;
         case 'location':
-          zocialClass = 'zocial-guest';
+          iconClass = 'fontawesome-globe';
           data = bio.contacts[contactKey];
-          ref = '';
+          ref = ' ';
           break;
         case 'linkedin':
-          zocialClass = 'zocial-linkedin';
+          iconClass = 'fontawesome-linkedin';
           data = 'LinkedIn';
           ref = bio.contacts[contactKey];
           break;
         case 'wordpress':
-          zocialClass = 'zocial-wordpress';
+          iconClass = 'fontawesome-pencil';
           data = 'Wordpress';
           ref = bio.contacts[contactKey];
           break;
         default:
-          zocialClass = '';
+          iconClass = '';
           data = bio.contacts[contactKey];
-          ref = '';
+          ref = ' ';
       }
 
       // format and display each contact
-      //var formattedContact = HTMLmyGeneric.replace('%zocial%', zocialClass).replace('%data%', bio.contacts[contactKey]);
-      var formattedContact = HTMLmyGeneric.replace('%zocial%', zocialClass).replace('#', ref).replace('%data%', data);
+      var formattedContact = HTMLmyGeneric.replace('%iconfont%', iconClass).replace('#', ref).replace('%data%', data);
       $('#topContacts').append(formattedContact);
     }
   }
@@ -419,43 +418,43 @@ education.display = function() {
   displayOnlineCourses();
 };
 
-// function to display footer contact info using zocial icons
+// function to display footer contact info using icon fonts
 function displayFooter() {
   // Template for footer contact item
-  var HTMLfooterGeneric = '<li class="flex-item"><a class="white-text %zocial%" href="#"><span class="orange-text">%data%</span></a></li>';
+  var HTMLfooterGeneric = '<li class="flex-item"><a class="white-text %iconfont%" href="#"><span class="orange-text">%data%</span></a></li>';
 
   // iterate through each contacts object
   for (var contactKey in bio.footercontacts) {
     if (bio.footercontacts.hasOwnProperty(contactKey)) {
       // set variables
-      var zocialClass, myRef, myData;
+      var iconClass, myRef, myData;
 
       switch (contactKey) {
         case 'twitter':
-          zocialClass = 'zocial-twitter';
+          iconClass = 'fontawesome-twitter';
           myData = 'Twitter';
           break;
         case 'github':
-          zocialClass = 'zocial-github';
+          iconClass = 'fontawesome-github';
           myData = 'Github';
           break;
         case 'linkedin':
-          zocialClass = 'zocial-linkedin';
+          iconClass = 'fontawesome-linkedin';
           myData = 'LinkedIn';
           break;
         case 'wordpress':
-          zocialClass = 'zocial-wordpress';
+          iconClass = 'fontawesome-pencil';
           myData = 'Wordpress';
           break;
         default:
-          zocialClass = '';
+          iconClass = '';
           myData = contactKey;
       }
 
       myRef = bio.footercontacts[contactKey];
 
       // format and display contact
-      var formattedContact = HTMLfooterGeneric.replace('%zocial%', zocialClass).replace('#', myRef).replace('%data%', myData);
+      var formattedContact = HTMLfooterGeneric.replace('%iconfont%', iconClass).replace('#', myRef).replace('%data%', myData);
       $('#footerContacts').append(formattedContact);
     }
   }
