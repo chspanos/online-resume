@@ -5,8 +5,8 @@ var bio = {
   "welcomeMessage": "Welcome to my online resume.",
   "biopic": "images/Cheryl.jpg",
   "contacts": {
-    "mobile": "555-555-5555",
-    "email": "chspanos@myemail.com",
+    //"mobile": "555-555-5555",
+    //"email": "chspanos@myemail.com",
     "linkedin": "https://www.linkedin.com/in/cheryl-spanos-4b9471a5",
     "github": "https://github.com/chspanos",
     "wordpress": "https://writersotj.wordpress.com/",
@@ -143,7 +143,6 @@ var education = {
 // function to display top contact info
 function displayContacts() {
   // modify the generic contact template to use icon fonts
-  //var HTMLmyGeneric = '<li class="flex-item"><span class="orange-text %zocial%"></span><span class="white-text">%data%</span></li>';
   var HTMLmyGeneric = '<li class="flex-item"><a class="white-text %iconfont%" href="#"><span class="orange-text">%data%</span></a></li>';
 
   // iterate through each contacts object
@@ -154,37 +153,37 @@ function displayContacts() {
 
       switch (contactKey) {
         case 'mobile':
-          iconClass = 'fontawesome-phone';
+          iconClass = 'fa-phone';
           data =  bio.contacts[contactKey];
           ref = ' ';
           break;
         case 'email':
-          iconClass = 'fontawesome-envelope';
+          iconClass = 'fa-envelope-o';
           data = bio.contacts[contactKey];
           ref = ' ';
           break;
         case 'twitter':
-          iconClass = 'fontawesome-twitter';
+          iconClass = 'fa-twitter';
           data = 'Twitter';
           ref = bio.contacts[contactKey];
           break;
         case 'github':
-          iconClass = 'fontawesome-github';
+          iconClass = 'fa-github';
           data = 'GitHub';
           ref = bio.contacts[contactKey];
           break;
         case 'location':
-          iconClass = 'fontawesome-globe';
+          iconClass = 'fa-globe';
           data = bio.contacts[contactKey];
           ref = ' ';
           break;
         case 'linkedin':
-          iconClass = 'fontawesome-linkedin';
+          iconClass = 'fa-linkedin';
           data = 'LinkedIn';
           ref = bio.contacts[contactKey];
           break;
         case 'wordpress':
-          iconClass = 'fontawesome-pencil';
+          iconClass = 'fa-wordpress';
           data = 'Wordpress';
           ref = bio.contacts[contactKey];
           break;
@@ -431,19 +430,19 @@ function displayFooter() {
 
       switch (contactKey) {
         case 'twitter':
-          iconClass = 'fontawesome-twitter';
+          iconClass = 'fa-twitter';
           myData = 'Twitter';
           break;
         case 'github':
-          iconClass = 'fontawesome-github';
+          iconClass = 'fa-github';
           myData = 'Github';
           break;
         case 'linkedin':
-          iconClass = 'fontawesome-linkedin';
+          iconClass = 'fa-linkedin';
           myData = 'LinkedIn';
           break;
         case 'wordpress':
-          iconClass = 'fontawesome-pencil';
+          iconClass = 'fa-wordpress';
           myData = 'Wordpress';
           break;
         default:
