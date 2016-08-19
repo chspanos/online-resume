@@ -5,8 +5,8 @@ var bio = {
   "welcomeMessage": "Welcome to my online resume.",
   "biopic": "images/Cheryl.jpg",
   "contacts": {
-    "mobile": "555-555-5555",
-    "email": "chspanos@myemail.com",
+    //"mobile": "555-555-5555",
+    //"email": "chspanos@myemail.com",
     "linkedin": "https://www.linkedin.com/in/cheryl-spanos-4b9471a5",
     "github": "https://github.com/chspanos",
     "wordpress": "https://writersotj.wordpress.com/",
