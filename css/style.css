@@ -191,11 +191,6 @@ span {
   text-align: center;
 }
 
-/* zocial */
-[class*="zocial-"]:before {
-  font-family: "zocial", sans-serif;
-}
-
 /* fontawesome */
 [class*="fa-"]:before {
   font-family: "FontAwesome", sans-serif;

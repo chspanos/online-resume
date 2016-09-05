@@ -18,7 +18,7 @@ var bio = {
     "wordpress": "https://writersotj.wordpress.com/"
   },
   "skills" : [
-    "More than five years of software engineering experience in CAD/EDA",
+    "More than five years of software engineering experience",
     "Excellent written communication skills",
     "Detail-oriented and organized problem solver",
     "Strong analytical skills",
@@ -49,7 +49,7 @@ var work = {
     },
     {
       "employer": "Grace Cooperative Preschool",
-      "title": "Treasurer (volunteer position)",
+      "title": "Treasurer",
       "location": "Walnut Creek, CA",
       "dates": "2000-2002",
       "description": "Managed the finances, including tuition, monthly billing, and the annual budget for a preschool of about 25 families."
@@ -82,9 +82,16 @@ var projects = {
     {
       "title": "Online Resume",
       "dates": "2016",
-      "description": "An online resume that uses JSON objects to store resume data and employs javaScript and jQuery to populate the HTML with this data",
+      "description": "An online resume that uses JSON objects to store resume data and employs JavaScript and jQuery to populate the HTML with this data",
       "images": ["images/resume-img1.jpg"],
       "url": "https://chspanos.github.io/frontend-nanodegree-resume"
+    },
+    {
+      "title": "Arcade Game",
+      "dates": "2016",
+      "description": "A Frogger-style arcade game whose Player and Enemy objects and methods were coded using object-oriented JavaScript",
+      "images": ["images/arcade7.jpg", "images/arcade5.jpg"],
+      "url": "https://chspanos.github.io/frontend-nanodegree-arcade-game"
     }
   ]
 };
