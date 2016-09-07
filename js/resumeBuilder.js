@@ -84,14 +84,14 @@ var projects = {
       "dates": "2016",
       "description": "An online resume that uses JSON objects to store resume data and employs JavaScript and jQuery to populate the HTML with this data",
       "images": ["images/resume-img1.jpg"],
-      "url": "https://chspanos.github.io/frontend-nanodegree-resume"
+      "url": "https://chspanos.github.io/online-resume"
     },
     {
       "title": "Arcade Game",
       "dates": "2016",
       "description": "A Frogger-style arcade game whose Player and Enemy objects and methods were coded using object-oriented JavaScript",
       "images": ["images/arcade7.jpg", "images/arcade5.jpg"],
-      "url": "https://chspanos.github.io/frontend-nanodegree-arcade-game"
+      "url": "https://chspanos.github.io/arcade-game"
     }
   ]
 };

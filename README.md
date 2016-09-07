@@ -8,7 +8,7 @@ In addition, the resume contains a Google Maps API that displays a pin for each 
 
 Finally, I customized my resume by adding some additional subsections and styled it with CSS.
 
-My finished resume can be viewed on my project web page [here](https://chspanos.github.io/frontend-nanodegree-resume).
+My finished resume can be viewed on my project web page [here](https://chspanos.github.io/online-resume).
 
 ## Project Details
 
