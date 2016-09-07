@@ -1,4 +1,19 @@
-# Project Details
+# Online Resume Project
+
+In this project for the Udacity Front-end Web Developer nanodegree, I created an online resume. I used JSON objects to store my resume data, and then used jQuery to populate the HTML with this information.
+
+Each resume section (bio, work experience, projects, and education) contains its own display method. These sections can be built in any order.
+
+In addition, the resume contains a Google Maps API that displays a pin for each location culled from the resume data.
+
+Finally, I customized my resume by adding some additional subsections and styled it with CSS.
+
+My finished resume can be viewed on my project web page [here](https://chspanos.github.io/frontend-nanodegree-resume).
+
+## Project Details
+
+In you want to know more about this Udacity project, the following sections contain detailed instructions and guidelines.
+
 ## How do I complete this project?
 Review the Online Resume [Project Rubric](https://review.udacity.com/?_ga=1.189245867.12280332.1465333852#!/projects/2962818615/rubric).
 
