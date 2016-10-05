@@ -92,6 +92,13 @@ var projects = {
       "description": "A Frogger-style arcade game whose Player and Enemy objects and methods were coded using object-oriented JavaScript",
       "images": ["images/arcade7.jpg", "images/arcade5.jpg"],
       "url": "https://chspanos.github.io/arcade-game"
+    },
+    {
+      "title": "Web Optimization",
+      "dates": "2016",
+      "description": "Optimized the critical rendering path of a provided mobile portfolio to achieve a PageSpeed score of 95/100 on load and scroll at 60 fps",
+      "images": ["images/web-optim5.jpg", "images/web-optim7.jpg"],
+      "url": "https://chspanos.github.io/mobile-portfolio"
     }
   ]
 };
