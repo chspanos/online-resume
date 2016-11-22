@@ -99,6 +99,13 @@ var projects = {
       "description": "Optimized the critical rendering path of a provided mobile portfolio to achieve a PageSpeed score of 95/100 on load and scroll at 60 fps",
       "images": ["images/web-optim5.jpg", "images/web-optim7.jpg"],
       "url": "https://chspanos.github.io/mobile-portfolio"
+    },
+    {
+      "title": "Neighborhood Map",
+      "dates": "2016",
+      "description": "A neighborhood map created with Google Maps and other APIs and built on a MVVM framework implemented with Knockout",
+      "images": ["images/neighborhood1.jpg"],
+      "url": "https://chspanos.github.io/neighborhood-map"
     }
   ]
 };
