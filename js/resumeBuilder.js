@@ -7,14 +7,14 @@ var bio = {
   "contacts": {
     //"mobile": "555-555-5555",
     //"email": "chspanos@myemail.com",
-    "linkedin": "https://www.linkedin.com/in/cheryl-spanos-4b9471a5",
+    "linkedin": "https://www.linkedin.com/in/cherylharknessspanos",
     "github": "https://github.com/chspanos",
     "wordpress": "https://writersotj.wordpress.com/",
     "location": "San Francisco Bay Area"
   },
   "footercontacts": {
     "github": "https://github.com/chspanos",
-    "linkedin": "https://www.linkedin.com/in/cheryl-spanos-4b9471a5",
+    "linkedin": "https://www.linkedin.com/in/cherylharknessspanos",
     "wordpress": "https://writersotj.wordpress.com/"
   },
   "skills" : [
@@ -29,11 +29,11 @@ var bio = {
 // Work JSON ojbect
 var work = {
   "jobs": [{
-      "employer": "UC Berkeley Extension & others",
+      "employer": "Udacity & UC Berkeley Extension",
       "title": "Student",
       "location": "San Francisco Bay Area, CA",
       "dates": "2015-present",
-      "description": "Completed coursework in C++ programming and Python, earning an A in each class. Currently enrolled in Udacity's Front-End Web Developer nanodegree."
+      "description": "Completed Udacity's Front-End Web Developer nanodegree. Also completed coursework in C++ programming and Python, earning an A in each class."
     },
     {
       "employer": "Self-employed",
@@ -106,6 +106,13 @@ var projects = {
       "description": "A neighborhood map created with Google Maps and other APIs and built on a MVVM framework implemented with Knockout",
       "images": ["images/neighborhood1.jpg"],
       "url": "https://chspanos.github.io/neighborhood-map"
+    },
+    {
+      "title": "Feed Reader Testing",
+      "dates": "2016",
+      "description": "Employed Jasmine to create a test suite to check the functionality of a provided RSS Feed application",
+      "images": ["images/feedreader3.jpg"],
+      "url": "https://chspanos.github.io/feedreader"
     }
   ]
 };
@@ -143,7 +150,7 @@ var education = {
   "onlineCourses": [{
       "title": "Front-End Web Developer Nanodegree",
       "school": "Udacity",
-      "dates": "in progress",
+      "dates": "2016",
       "url": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001"
     },
     {
