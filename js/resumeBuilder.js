@@ -119,7 +119,7 @@ var projects = {
       "dates": "2017",
       "description": "A movie trailer website built in Python which displays movie poster art and plays YouTube trailers",
       "images": ["images/movie-trailer3.jpg"],
-      "url": "https://github.com/chspanos/movie-trailer"
+      "url": "https://github.com/chspanos/movie-trailer-website"
     },
     {
       "title": "Multi-User Blog",
