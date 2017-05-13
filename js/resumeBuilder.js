@@ -113,6 +113,27 @@ var projects = {
       "description": "Employed Jasmine to create a test suite to check the functionality of a provided RSS Feed application",
       "images": ["images/feedreader3.jpg"],
       "url": "https://chspanos.github.io/feedreader"
+    },
+    {
+      "title": "Movie Trailer Website",
+      "dates": "2017",
+      "description": "A movie trailer website built in Python which displays movie poster art and plays YouTube trailers",
+      "images": ["images/movie-trailer3.jpg"],
+      "url": "https://github.com/chspanos/movie-trailer"
+    },
+    {
+      "title": "Multi-User Blog",
+      "dates": "2017",
+      "description": "A multi-user blog written in Python with Jinja templates and implemented on Google App Engine",
+      "images": ["images/multi-user-blog.jpg"],
+      "url": "https://hello-udacity83.appspot.com/blog"
+    },
+    {
+      "title": "Tournament Results",
+      "dates": "2017",
+      "description": "Employed PostgreSQL to create and query a database to track swiss-style tournament results",
+      "images": ["images/tournament.jpg"],
+      "url": "https://github.com/chspanos/fullstack-vm"
     }
   ]
 };
@@ -148,10 +169,16 @@ var education = {
     }
   ],
   "onlineCourses": [{
-      "title": "Front-End Web Developer Nanodegree",
+      "title": "Full-Stack Web Developer Nanodegree",
       "school": "Udacity",
-      "dates": "2016",
-      "url": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001"
+      "dates": "2017 (in progress)",
+      "url": "https://www.udacity.com/course/full-stack-web-developer-nanodegree--nd004"
+    },
+    {
+        "title": "Front-End Web Developer Nanodegree",
+        "school": "Udacity",
+        "dates": "2016",
+        "url": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001"
     },
     {
       "title": "Python Programming",
@@ -270,7 +297,7 @@ bio.display = function() {
 function displayResults(resultsList) {
   // define accomplishment list templates
   var HTMLresultsStart = '<ul class="results"></ul>';
-  var HTMLresults = '<li class="result"><p>%data%</p></li>';
+  var HTMLresults = '<li class="result">%data%</li>';
 
   // start a new results list
   $('.work-entry:last').append(HTMLresultsStart);
