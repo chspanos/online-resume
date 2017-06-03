@@ -119,7 +119,7 @@ var projects = {
       "dates": "2017",
       "description": "A movie trailer website built in Python which displays movie poster art and plays YouTube trailers",
       "images": ["images/movie-trailer3.jpg"],
-      "url": "https://github.com/chspanos/movie-trailer"
+      "url": "https://github.com/chspanos/movie-trailer-website"
     },
     {
       "title": "Multi-User Blog",
@@ -134,6 +134,13 @@ var projects = {
       "description": "Employed PostgreSQL to create and query a database to track swiss-style tournament results",
       "images": ["images/tournament.jpg"],
       "url": "https://github.com/chspanos/fullstack-vm"
+    },
+    {
+      "title": "Plant Catalog",
+      "dates": "2017",
+      "description": "A plant catalog web application implemented with SQLalchemy, Flask, and 3rd-party login authentication",
+      "images": ["images/plant-catalog4.jpg", "images/plant-catalog6.jpg", "images/plant-catalog3.jpg"],
+      "url": "https://github.com/chspanos/catalog"
     }
   ]
 };
